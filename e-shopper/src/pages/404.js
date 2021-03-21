@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Page404 = () => {
   return (
@@ -18,7 +19,7 @@ const Page404 = () => {
           for has up and Vanished.
         </p>
         <h2>
-          <a href="/">Bring me back Home</a>
+          <Link to="/">Bring me back Home</Link>
         </h2>
       </div>
     </div>
