@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+//import 'bootstrap/dist/css/bootstrap.min.css';   This line will make the carousel working, but will mess everything else
 
 import Home from "./pages/home";
 import Shop from "./pages/shop";
