@@ -1,16 +1,17 @@
-import React from 'react';
-import CategoryTab from './main/categoryTab';
-import FeatureItems from './main/featureItems';
-import RecommendedItems from './main/recommendedItems';
+import React from "react";
+import { propTypes } from "react-bootstrap/esm/Image";
+import CategoryTab from "./main/categoryTab";
+import FeatureItems from "./main/featureItems";
+import RecommendedItems from "./main/recommendedItems";
 
-const Main = () => {
-    return (
-        <div class="col-sm-9 padding-right">
-            <FeatureItems/>
-            <CategoryTab/>
-            <RecommendedItems/>
-        </div>
-    );
+const Main = (props) => {
+  return (
+    <div class="col-sm-9 padding-right">
+      <FeatureItems products={props.products} />
+      <CategoryTab />
+      <RecommendedItems />
+    </div>
+  );
 };
 
 export default Main;
