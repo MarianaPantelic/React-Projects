@@ -3,29 +3,28 @@ import PageFooter from "../footer";
 import RecommendedItems from "../main/recommendedItems";
 import PageHeader from "../pageHeader";
 import SideBar from "../sideBar";
-import MainProductDetails from "../mainProductDetails"
+import MainProductDetails from "../mainProductDetails";
+import { useParams } from "react-router-dom";
 
-const ProductDetails = () => {
+const ProductDetails = (props) => {
   return (
     <>
-
-      <PageHeader/>
+      <PageHeader />
       <div class="container">
         <div class="row">
           <div class="col-sm-3">
             <SideBar />
           </div>
           <div className="col-sm-9 padding-right">
-            <MainProductDetails />
-            <RecommendedItems/>
+            <MainProductDetails products={props.products} />
+            <RecommendedItems />
           </div>
         </div>
-        
       </div>
 
       <PageFooter />
     </>
-  )
+  );
 };
 
 export default ProductDetails;
