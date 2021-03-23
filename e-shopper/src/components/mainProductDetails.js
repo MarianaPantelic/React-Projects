@@ -1,6 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 const MainProductDetails = (props) => {
 
@@ -9,6 +9,9 @@ const MainProductDetails = (props) => {
 		window.scrollTo(0, 0)
 		//console.log(document.body.clientHeight);
 	  }, [])
+
+    //useHistory is a hook to let us navigate to any route or link dynamically
+    const history = useHistory();
 
     const {id} = useParams();
     console.log(id);
@@ -271,7 +274,7 @@ const MainProductDetails = (props) => {
                 </div>
             </div>
             </div>
-            : null}
+            : history.push("/404")}
         </>
     );
 };
