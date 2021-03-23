@@ -35,9 +35,7 @@ const BarBottom = () => {
                     <li>
                       <Link to="/shop/products">Products</Link>
                     </li>
-                    <li>
-                      <Link to="/shop/productDetails">Product Details</Link>
-                    </li>
+
                     <li>
                       <Link to="/shop/checkout">Checkout</Link>
                     </li>
@@ -61,9 +59,6 @@ const BarBottom = () => {
                       <Link to="/blog/blogSingle">Blog Single</Link>
                     </li>
                   </ul>
-                </li>
-                <li>
-                  <Link to="/404">404</Link>
                 </li>
                 <li>
                   <Link to="/contact">Contact</Link>
