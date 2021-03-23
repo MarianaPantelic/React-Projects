@@ -1,16 +1,21 @@
 import React from "react";
+import { Link, useParams } from "react-router-dom";
 
 const FeatureItems = (props) => {
   return (
     <div className="features_items">
       <h2 className="title text-center">Features Items</h2>
       {props.products.map((element) => (
-        <div className="col-sm-4">
+        <Link
+          to={"/shop/productDetails/" + element.id}
+          key={element.id}
+          className="col-sm-4"
+        >
           <div className="product-image-wrapper">
             <div className="single-products">
               <div className="productinfo text-center">
                 <img src={element.imgUrl} alt={element.id} />
-                <h2>{element.price}</h2>
+                <h2>${element.price}</h2>
                 <p>{element.title}</p>
                 <a href="#" className="btn btn-default add-to-cart">
                   <i className="fa fa-shopping-cart"></i>Add to cart
@@ -18,7 +23,7 @@ const FeatureItems = (props) => {
               </div>
               <div className="product-overlay">
                 <div className="overlay-content">
-                  <h2>{element.price}</h2>
+                  <h2>${element.price}</h2>
                   <p>{element.title}</p>
                   <a href="#" className="btn btn-default add-to-cart">
                     <i className="fa fa-shopping-cart"></i>Add to cart
@@ -41,7 +46,7 @@ const FeatureItems = (props) => {
               </ul>
             </div>
           </div>
-        </div>
+        </Link>
       ))}
       {/*       <div className="col-sm-4">
         <div className="product-image-wrapper">

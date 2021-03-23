@@ -1,8 +1,6 @@
 import React from "react";
-import {Link} from 'react-router-dom'; 
 
 const Category = () => {
-
   return (
     <div>
       <h2>Category</h2>
@@ -10,8 +8,7 @@ const Category = () => {
         <div className="panel panel-default">
           <div className="panel-heading">
             <h4 className="panel-title">
-              <a href="./#sportswear"
-              >
+              <a href="./#sportswear">
                 <span className="badge pull-right">
                   <i className="fa fa-plus"></i>
                 </span>

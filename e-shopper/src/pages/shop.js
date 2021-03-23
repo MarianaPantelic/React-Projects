@@ -6,7 +6,7 @@ import Login from "../components/shop/login";
 import ProductDetails from "../components/shop/productDetails";
 import Products from "../components/shop/products";
 
-const Shop = () => {
+const Shop = (props) => {
     let { path } = useRouteMatch();
     console.log(path);
   return (
@@ -15,7 +15,7 @@ const Shop = () => {
                 <div>This is Shop Page</div>
             </Route>
             <Route path = {path + "/products"}><Products/></Route>
-            <Route path = {path + "/productDetails"}><ProductDetails/></Route>
+            <Route path= {path + "/productDetails/:id"} ><ProductDetails products = {props.products}/></Route>
             <Route path = {path + "/checkout"}><Checkout/></Route>
             <Route path = {path + "/cart"}><Cart/></Route>
             <Route path = {path + "/login"}><Login/></Route>

@@ -63,10 +63,10 @@ const App = () => {
         <Route exact path="/">
           <Home products = {products}/>
         </Route>
-        <Route path = "/shop"><Shop/></Route>
+        <Route path = "/shop"><Shop products = {products}/></Route>
         <Route path = "/blog"><Blog/></Route>
-        <Route path = "/404"><Page404/></Route>
         <Route path = "/contact"><Contact/></Route>
+        <Route path = "*"><Page404/></Route>
       </Switch>
     </Router>
     

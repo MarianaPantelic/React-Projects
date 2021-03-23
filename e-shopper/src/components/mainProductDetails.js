@@ -1,14 +1,29 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
+import { useParams } from "react-router-dom";
 
-const MainProductDetails = () => {
+const MainProductDetails = (props) => {
+
+    // scroll to the top after showing the 
+	React.useEffect(() => {
+		window.scrollTo(0, 0)
+		//console.log(document.body.clientHeight);
+	  }, [])
+
+    const {id} = useParams();
+    console.log(id);
+
+    const foundProduct = props.products.find(element => element.id == id)
+    console.log(foundProduct);
+
     return (
         <>
-       
+            {foundProduct ? 
+            <div>
             <div className="product-details">
                 <div className="col-sm-5">
                     <div className="view-product">
-                        <img src="/images/product-details/1.jpg" alt="Product Details 1" />
+                        <img src={foundProduct.imgUrl} alt={foundProduct.title} />
                         <h3>ZOOM</h3>
                     </div>
                     <div id="similar-product" className="carousel slide" data-ride="carousel">
@@ -46,11 +61,11 @@ const MainProductDetails = () => {
                 <div className="col-sm-7">
                     <div className="product-information">
                         <img src="/images/product-details/new.jpg" className="newarrival" alt="New" />
-                        <h2>Anne Klein Sleeveless Colorblock Scuba</h2>
-                        <p>Web ID: 1089772</p>
+                        <h2>{foundProduct.title}</h2>
+                        <p>Web ID: {foundProduct.id}</p>
                         <img src="/images/product-details/rating.png" alt="Rating" />
                         <span>
-                            <span>US $59</span>
+                            <span>US ${foundProduct.price}</span>
                             <label>Quantity:</label>
                             <input type="text" value="3" />
                             <button type="button" className="btn btn-fefault cart">
@@ -255,6 +270,8 @@ const MainProductDetails = () => {
                     
                 </div>
             </div>
+            </div>
+            : null}
         </>
     );
 };

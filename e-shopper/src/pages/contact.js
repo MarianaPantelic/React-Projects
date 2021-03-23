@@ -1,8 +1,23 @@
 import React from "react";
 import PageFooter from "../components/footer";
 import PageHeader from "../components/pageHeader";
+import GoogleMapReact from "google-map-react";
 
 const Contact = () => {
+  const AnyReactComponent = () => (
+    <div>
+      <i
+        className="fa fa-map-marker"
+        style={{
+          fontSize: "50px",
+          color: "red",
+          top: "-50px",
+          position: "relative",
+        }}
+      ></i>
+    </div>
+  );
+
   return (
     <>
       <PageHeader />
@@ -14,7 +29,20 @@ const Contact = () => {
               <h2 className="title text-center">
                 Contact <strong>Us</strong>
               </h2>
-              <div id="gmap" className="contact-map"></div>
+              <div id="gmap" className="contact-map">
+                <GoogleMapReact
+                  bootstrapURLKeys={{
+                    key: "AIzaSyDLOKCxtRd_pEqn4_1eD2WjVXdtS8V4p3s",
+                  }}
+                  defaultCenter={{ lat: 52.52, lng: 13.405 }}
+                  defaultZoom={11}
+                >
+                  <AnyReactComponent
+                    lat={52.52}
+                    lng={13.405}
+                  ></AnyReactComponent>
+                </GoogleMapReact>
+              </div>
             </div>
           </div>
           <div className="row">
