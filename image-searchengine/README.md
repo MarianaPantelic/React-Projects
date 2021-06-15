@@ -1,3 +1,5 @@
+Used a Pixabay API to search photos by name and display them.
+
 ### Result:
 
 ![Result](image-search-engine.gif)
