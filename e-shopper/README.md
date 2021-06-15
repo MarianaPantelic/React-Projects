@@ -1,4 +1,6 @@
-# Result:
+Used a Bootstrap Template to create a React App with the same structure and design.
+
+### Result:
 
 ![Result](./src/e-shop.gif)
 
